@@ -1,0 +1,238 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ce17784c3e882eff21082322049c8779",
+    "packages": [
+        {
+            "name": "sms-gate/sms-gate",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sms-Gate/SmsGate.git",
+                "reference": "bc649c1f1c93f415818e8547ebe6c3ef3f0c9410"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sms-Gate/SmsGate/zipball/bc649c1f1c93f415818e8547ebe6c3ef3f0c9410",
+                "reference": "bc649c1f1c93f415818e8547ebe6c3ef3f0c9410",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "escapestudios/symfony2-coding-standard": "~2.0",
+                "phpmetrics/phpmetrics": "^2.0",
+                "phpunit/phpunit": "^6.2",
+                "psr/log": "~1.0.0"
+            },
+            "suggest": {
+                "psr/log-implementation": "Add logging functionality."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SmsGate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitaliy Zhuk",
+                    "email": "zhuk2205@gmail.com"
+                }
+            ],
+            "description": "The library for work with SMS gates.",
+            "keywords": [
+                "gate",
+                "sms",
+                "sms gate"
+            ],
+            "time": "2017-10-02T11:41:51+00:00"
+        },
+        {
+            "name": "sms-gate/turbo-sms-adapter",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sms-Gate/TurboSmsAdapter.git",
+                "reference": "999c9b0e77dcde7d79f47a9e0b84282c231c8744"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sms-Gate/TurboSmsAdapter/zipball/999c9b0e77dcde7d79f47a9e0b84282c231c8744",
+                "reference": "999c9b0e77dcde7d79f47a9e0b84282c231c8744",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "sms-gate/sms-gate": "~1.0.0"
+            },
+            "provide": {
+                "sms-gate/adapter": "1.0.0"
+            },
+            "require-dev": {
+                "escapestudios/symfony2-coding-standard": "~2.0",
+                "ext-soap": "*",
+                "ext-xml": "*",
+                "phpmetrics/phpmetrics": "^2.0",
+                "phpunit/phpunit": "^6.2"
+            },
+            "suggest": {
+                "ext-soap": "For use SOAP TurboSMS adapter.",
+                "ext-xml": "For use SOAP TurboSMS adapter."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SmsGate\\Adapter\\TurboSms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitaliy Zhuk",
+                    "email": "zhuk2205@gmail.com"
+                }
+            ],
+            "description": "The library implement TurboSMS adapter.",
+            "keywords": [
+                "gate",
+                "sms",
+                "sms gate",
+                "turbo sms",
+                "turbosms"
+            ],
+            "time": "2017-10-02T11:36:19+00:00"
+        },
+        {
+            "name": "symfony/http-foundation",
+            "version": "v3.3.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-foundation.git",
+                "reference": "22cf9c2b1d9f67cc8e75ae7f4eaa60e4c1eff1f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/22cf9c2b1d9f67cc8e75ae7f4eaa60e4c1eff1f8",
+                "reference": "22cf9c2b1d9f67cc8e75ae7f4eaa60e4c1eff1f8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/polyfill-mbstring": "~1.1"
+            },
+            "require-dev": {
+                "symfony/expression-language": "~2.8|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\HttpFoundation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony HttpFoundation Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-10-05T23:10:23+00:00"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296",
+                "reference": "2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2017-10-11T12:05:26+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

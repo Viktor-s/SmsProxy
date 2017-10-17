@@ -1,0 +1,5 @@
+<?php
+
+define ('SMS_SENDER', '');
+define ('TURBO_SMS_SOAP_LOGIN', '');
+define ('TURBO_SMS_SOAP_PASSWORD', '');
