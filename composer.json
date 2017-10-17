@@ -1,6 +1,9 @@
 {
     "require": {
         "php": "^7.1",
+        "ext-soap": "*",
+        "ext-xml": "*",
+
         "sms-gate/sms-gate": "^1.0",
         "sms-gate/adapter": "^1.0",
         "sms-gate/turbo-sms-adapter": "^1.0",
