@@ -11,18 +11,18 @@ use Symfony\Component\HttpFoundation\Response;
 class SendSmsController
 {
     /**
-     * @var SenderInterface
+     * @var SmsSenderFactory
      */
-    private $sender;
+    private $senderFactory;
 
     /**
      * Constructor.
      *
-     * @param SenderInterface $sender
+     * @param SmsSenderFactory $senderFactory
      */
-    public function __construct(SenderInterface $sender)
+    public function __construct(SmsSenderFactory $senderFactory)
     {
-        $this->sender = $sender;
+        $this->senderFactory = $senderFactory;
     }
 
     /**
@@ -38,7 +38,8 @@ class SendSmsController
         }
 
         try {
-            $this->sender->send(new Message($message, SMS_SENDER), new Phone($phone));
+            $this->senderFactory->createByPhone($phone)
+                ->send(new Message($message, SMS_SENDER), new Phone($phone));
         } catch (\Exception $e) {
             return new Response($e->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
         }

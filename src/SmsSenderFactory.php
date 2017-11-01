@@ -2,10 +2,14 @@
 
 namespace SmsProxy;
 
+use Http\Client\Curl\Client;
+use Http\Message\MessageFactory\GuzzleMessageFactory;
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
+use SmsGate\Adapter\SmsAero\Configuration;
+use SmsGate\Adapter\SmsAero\SmsAeroAdapter;
 use SmsGate\Adapter\TurboSms\TurboSmsAdapterFactory;
 use SmsGate\Sender\LoggingSenderDecorator;
 use SmsGate\Sender\Sender;
@@ -31,11 +35,21 @@ class SmsSenderFactory
     /**
      * Create the SMS sender
      *
+     * @param string $phone
+     *
      * @return SenderInterface
      */
-    public function create(): SenderInterface
+    public function createByPhone(string $phone): SenderInterface
     {
-        $adapter = TurboSmsAdapterFactory::soap(TURBO_SMS_SOAP_LOGIN, TURBO_SMS_SOAP_PASSWORD);
+        if (strpos($phone, '7') === 0) {
+            // Use SMS Aero adapter
+            $httpClient = new Client();
+            $configuration = new Configuration(SMS_AERO_USER, SMS_AERO_PASSWORD);
+            $adapter = new SmsAeroAdapter($httpClient, new GuzzleMessageFactory(), $configuration);
+        } else {
+            // Use TurboSMS adapter
+            $adapter = TurboSmsAdapterFactory::soap(TURBO_SMS_SOAP_LOGIN, TURBO_SMS_SOAP_PASSWORD);
+        }
 
         $sender = new Sender($adapter);
         $logger = $this->createLogger();
